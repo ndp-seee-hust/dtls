@@ -1,0 +1,2 @@
+/usr/bin/ar qc libdtls.a  CMakeFiles/dtls.dir/src/dtls.c.o CMakeFiles/dtls.dir/src/socket.c.o
+/usr/bin/ranlib libdtls.a

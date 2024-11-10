@@ -1,0 +1,1 @@
+/usr/bin/cc    CMakeFiles/server.dir/test/server_test.c.o  -o server  libdtls.a ../libmbedtls/libmbedx509.a ../libmbedtls/libmbedtls.a ../libmbedtls/libmbedcrypto.a 

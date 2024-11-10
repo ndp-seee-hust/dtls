@@ -1,0 +1,1 @@
+/usr/bin/cc    CMakeFiles/test_dtls.dir/test/test_dtls.c.o  -o test_dtls  libdtls.a ../libmbedtls/libmbedtls.a ../libmbedtls/libmbedcrypto.a ../libmbedtls/libmbedx509.a 
