@@ -1,0 +1,1 @@
+/usr/bin/cc    CMakeFiles/test_aes.dir/test/test_aes.c.o  -o test_aes  libdtls.a ../libmbedtls/libmbedx509.a ../libmbedtls/libmbedtls.a ../libmbedtls/libmbedcrypto.a 

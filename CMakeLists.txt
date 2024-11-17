@@ -33,3 +33,12 @@ target_link_libraries(test_sign dtls ${MBEDTLS_LIBS})
 
 add_executable(test_verify test/test_verify.c)
 target_link_libraries(test_verify dtls ${MBEDTLS_LIBS})
+
+add_executable(test_encrypt test/test_encrypt.c)
+target_link_libraries(test_encrypt dtls ${MBEDTLS_LIBS})
+
+add_executable(test_decrypt test/test_decrypt.c)
+target_link_libraries(test_decrypt dtls ${MBEDTLS_LIBS})
+
+add_executable(test_aes test/test_aes.c)
+target_link_libraries(test_aes dtls ${MBEDTLS_LIBS})

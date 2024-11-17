@@ -1,0 +1,1 @@
+/usr/bin/cc    CMakeFiles/test_encrypt.dir/test/test_encrypt.c.o  -o test_encrypt  libdtls.a ../libmbedtls/libmbedx509.a ../libmbedtls/libmbedtls.a ../libmbedtls/libmbedcrypto.a 

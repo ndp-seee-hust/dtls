@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named test_encrypt
+
+# Build rule for target.
+test_encrypt: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_encrypt
+.PHONY : test_encrypt
+
+# fast build rule for target.
+test_encrypt/fast:
+	$(MAKE) -f CMakeFiles/test_encrypt.dir/build.make CMakeFiles/test_encrypt.dir/build
+.PHONY : test_encrypt/fast
+
+#=============================================================================
 # Target rules for targets named test_sign
 
 # Build rule for target.
@@ -124,6 +137,19 @@ test_sign/fast:
 .PHONY : test_sign/fast
 
 #=============================================================================
+# Target rules for targets named test_aes
+
+# Build rule for target.
+test_aes: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_aes
+.PHONY : test_aes
+
+# fast build rule for target.
+test_aes/fast:
+	$(MAKE) -f CMakeFiles/test_aes.dir/build.make CMakeFiles/test_aes.dir/build
+.PHONY : test_aes/fast
+
+#=============================================================================
 # Target rules for targets named test_gen_key
 
 # Build rule for target.
@@ -135,6 +161,19 @@ test_gen_key: cmake_check_build_system
 test_gen_key/fast:
 	$(MAKE) -f CMakeFiles/test_gen_key.dir/build.make CMakeFiles/test_gen_key.dir/build
 .PHONY : test_gen_key/fast
+
+#=============================================================================
+# Target rules for targets named test_decrypt
+
+# Build rule for target.
+test_decrypt: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_decrypt
+.PHONY : test_decrypt
+
+# fast build rule for target.
+test_decrypt/fast:
+	$(MAKE) -f CMakeFiles/test_decrypt.dir/build.make CMakeFiles/test_decrypt.dir/build
+.PHONY : test_decrypt/fast
 
 #=============================================================================
 # Target rules for targets named gen_ecc_key
@@ -296,6 +335,87 @@ test/gen_rsa_key.c.s:
 	$(MAKE) -f CMakeFiles/gen_rsa_key.dir/build.make CMakeFiles/gen_rsa_key.dir/test/gen_rsa_key.c.s
 .PHONY : test/gen_rsa_key.c.s
 
+test/test_aes.o: test/test_aes.c.o
+
+.PHONY : test/test_aes.o
+
+# target to build an object file
+test/test_aes.c.o:
+	$(MAKE) -f CMakeFiles/test_aes.dir/build.make CMakeFiles/test_aes.dir/test/test_aes.c.o
+.PHONY : test/test_aes.c.o
+
+test/test_aes.i: test/test_aes.c.i
+
+.PHONY : test/test_aes.i
+
+# target to preprocess a source file
+test/test_aes.c.i:
+	$(MAKE) -f CMakeFiles/test_aes.dir/build.make CMakeFiles/test_aes.dir/test/test_aes.c.i
+.PHONY : test/test_aes.c.i
+
+test/test_aes.s: test/test_aes.c.s
+
+.PHONY : test/test_aes.s
+
+# target to generate assembly for a file
+test/test_aes.c.s:
+	$(MAKE) -f CMakeFiles/test_aes.dir/build.make CMakeFiles/test_aes.dir/test/test_aes.c.s
+.PHONY : test/test_aes.c.s
+
+test/test_decrypt.o: test/test_decrypt.c.o
+
+.PHONY : test/test_decrypt.o
+
+# target to build an object file
+test/test_decrypt.c.o:
+	$(MAKE) -f CMakeFiles/test_decrypt.dir/build.make CMakeFiles/test_decrypt.dir/test/test_decrypt.c.o
+.PHONY : test/test_decrypt.c.o
+
+test/test_decrypt.i: test/test_decrypt.c.i
+
+.PHONY : test/test_decrypt.i
+
+# target to preprocess a source file
+test/test_decrypt.c.i:
+	$(MAKE) -f CMakeFiles/test_decrypt.dir/build.make CMakeFiles/test_decrypt.dir/test/test_decrypt.c.i
+.PHONY : test/test_decrypt.c.i
+
+test/test_decrypt.s: test/test_decrypt.c.s
+
+.PHONY : test/test_decrypt.s
+
+# target to generate assembly for a file
+test/test_decrypt.c.s:
+	$(MAKE) -f CMakeFiles/test_decrypt.dir/build.make CMakeFiles/test_decrypt.dir/test/test_decrypt.c.s
+.PHONY : test/test_decrypt.c.s
+
+test/test_encrypt.o: test/test_encrypt.c.o
+
+.PHONY : test/test_encrypt.o
+
+# target to build an object file
+test/test_encrypt.c.o:
+	$(MAKE) -f CMakeFiles/test_encrypt.dir/build.make CMakeFiles/test_encrypt.dir/test/test_encrypt.c.o
+.PHONY : test/test_encrypt.c.o
+
+test/test_encrypt.i: test/test_encrypt.c.i
+
+.PHONY : test/test_encrypt.i
+
+# target to preprocess a source file
+test/test_encrypt.c.i:
+	$(MAKE) -f CMakeFiles/test_encrypt.dir/build.make CMakeFiles/test_encrypt.dir/test/test_encrypt.c.i
+.PHONY : test/test_encrypt.c.i
+
+test/test_encrypt.s: test/test_encrypt.c.s
+
+.PHONY : test/test_encrypt.s
+
+# target to generate assembly for a file
+test/test_encrypt.c.s:
+	$(MAKE) -f CMakeFiles/test_encrypt.dir/build.make CMakeFiles/test_encrypt.dir/test/test_encrypt.c.s
+.PHONY : test/test_encrypt.c.s
+
 test/test_gen_key.o: test/test_gen_key.c.o
 
 .PHONY : test/test_gen_key.o
@@ -384,8 +504,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... test_encrypt"
 	@echo "... test_sign"
+	@echo "... test_aes"
 	@echo "... test_gen_key"
+	@echo "... test_decrypt"
 	@echo "... gen_ecc_key"
 	@echo "... edit_cache"
 	@echo "... test_verify"
@@ -403,6 +526,15 @@ help:
 	@echo "... test/gen_rsa_key.o"
 	@echo "... test/gen_rsa_key.i"
 	@echo "... test/gen_rsa_key.s"
+	@echo "... test/test_aes.o"
+	@echo "... test/test_aes.i"
+	@echo "... test/test_aes.s"
+	@echo "... test/test_decrypt.o"
+	@echo "... test/test_decrypt.i"
+	@echo "... test/test_decrypt.s"
+	@echo "... test/test_encrypt.o"
+	@echo "... test/test_encrypt.i"
+	@echo "... test/test_encrypt.s"
 	@echo "... test/test_gen_key.o"
 	@echo "... test/test_gen_key.i"
 	@echo "... test/test_gen_key.s"
