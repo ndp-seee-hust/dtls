@@ -60,5 +60,8 @@ void dtls_reset_session(dtls_context_t *dtls);
 int dtls_write(dtls_context_t *dtls, const unsigned char* buf, size_t len);
 int dtls_read(dtls_context_t *dtls, unsigned char* buf, size_t len);
 int dtls_probe(uint8_t* buf);
+int gen_key_pair(mbedtls_pk_context *pkey, const char *key_type, int key_size);
+int write_private_key(mbedtls_pk_context *pkey, const char *format, const char *file_name);
+int write_public_key(mbedtls_pk_context *pkey, const char *format, const char *file_name);
 
 #endif 

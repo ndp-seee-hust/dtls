@@ -53,8 +53,11 @@ CMAKE_BINARY_DIR = /home/ndp/Documents/dtls/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/client.dir/all
-all: CMakeFiles/server.dir/all
+all: CMakeFiles/test_sign.dir/all
+all: CMakeFiles/test_gen_key.dir/all
+all: CMakeFiles/gen_ecc_key.dir/all
+all: CMakeFiles/test_verify.dir/all
+all: CMakeFiles/gen_rsa_key.dir/all
 all: CMakeFiles/dtls.dir/all
 
 .PHONY : all
@@ -65,65 +68,149 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/client.dir/clean
-clean: CMakeFiles/server.dir/clean
+clean: CMakeFiles/test_sign.dir/clean
+clean: CMakeFiles/test_gen_key.dir/clean
+clean: CMakeFiles/gen_ecc_key.dir/clean
+clean: CMakeFiles/test_verify.dir/clean
+clean: CMakeFiles/gen_rsa_key.dir/clean
 clean: CMakeFiles/dtls.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/client.dir
+# Target rules for target CMakeFiles/test_sign.dir
 
 # All Build rule for target.
-CMakeFiles/client.dir/all: CMakeFiles/dtls.dir/all
-	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/depend
-	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ndp/Documents/dtls/build/CMakeFiles --progress-num=1,2 "Built target client"
-.PHONY : CMakeFiles/client.dir/all
+CMakeFiles/test_sign.dir/all: CMakeFiles/dtls.dir/all
+	$(MAKE) -f CMakeFiles/test_sign.dir/build.make CMakeFiles/test_sign.dir/depend
+	$(MAKE) -f CMakeFiles/test_sign.dir/build.make CMakeFiles/test_sign.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ndp/Documents/dtls/build/CMakeFiles --progress-num=10,11 "Built target test_sign"
+.PHONY : CMakeFiles/test_sign.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/client.dir/rule: cmake_check_build_system
+CMakeFiles/test_sign.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ndp/Documents/dtls/build/CMakeFiles 5
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/client.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_sign.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ndp/Documents/dtls/build/CMakeFiles 0
-.PHONY : CMakeFiles/client.dir/rule
+.PHONY : CMakeFiles/test_sign.dir/rule
 
 # Convenience name for target.
-client: CMakeFiles/client.dir/rule
+test_sign: CMakeFiles/test_sign.dir/rule
 
-.PHONY : client
+.PHONY : test_sign
 
 # clean rule for target.
-CMakeFiles/client.dir/clean:
-	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/clean
-.PHONY : CMakeFiles/client.dir/clean
+CMakeFiles/test_sign.dir/clean:
+	$(MAKE) -f CMakeFiles/test_sign.dir/build.make CMakeFiles/test_sign.dir/clean
+.PHONY : CMakeFiles/test_sign.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/server.dir
+# Target rules for target CMakeFiles/test_gen_key.dir
 
 # All Build rule for target.
-CMakeFiles/server.dir/all: CMakeFiles/dtls.dir/all
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/depend
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ndp/Documents/dtls/build/CMakeFiles --progress-num=6,7 "Built target server"
-.PHONY : CMakeFiles/server.dir/all
+CMakeFiles/test_gen_key.dir/all: CMakeFiles/dtls.dir/all
+	$(MAKE) -f CMakeFiles/test_gen_key.dir/build.make CMakeFiles/test_gen_key.dir/depend
+	$(MAKE) -f CMakeFiles/test_gen_key.dir/build.make CMakeFiles/test_gen_key.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ndp/Documents/dtls/build/CMakeFiles --progress-num=8,9 "Built target test_gen_key"
+.PHONY : CMakeFiles/test_gen_key.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/server.dir/rule: cmake_check_build_system
+CMakeFiles/test_gen_key.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ndp/Documents/dtls/build/CMakeFiles 5
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/server.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_gen_key.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ndp/Documents/dtls/build/CMakeFiles 0
-.PHONY : CMakeFiles/server.dir/rule
+.PHONY : CMakeFiles/test_gen_key.dir/rule
 
 # Convenience name for target.
-server: CMakeFiles/server.dir/rule
+test_gen_key: CMakeFiles/test_gen_key.dir/rule
 
-.PHONY : server
+.PHONY : test_gen_key
 
 # clean rule for target.
-CMakeFiles/server.dir/clean:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/clean
-.PHONY : CMakeFiles/server.dir/clean
+CMakeFiles/test_gen_key.dir/clean:
+	$(MAKE) -f CMakeFiles/test_gen_key.dir/build.make CMakeFiles/test_gen_key.dir/clean
+.PHONY : CMakeFiles/test_gen_key.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/gen_ecc_key.dir
+
+# All Build rule for target.
+CMakeFiles/gen_ecc_key.dir/all:
+	$(MAKE) -f CMakeFiles/gen_ecc_key.dir/build.make CMakeFiles/gen_ecc_key.dir/depend
+	$(MAKE) -f CMakeFiles/gen_ecc_key.dir/build.make CMakeFiles/gen_ecc_key.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ndp/Documents/dtls/build/CMakeFiles --progress-num=4,5 "Built target gen_ecc_key"
+.PHONY : CMakeFiles/gen_ecc_key.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/gen_ecc_key.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ndp/Documents/dtls/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/gen_ecc_key.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ndp/Documents/dtls/build/CMakeFiles 0
+.PHONY : CMakeFiles/gen_ecc_key.dir/rule
+
+# Convenience name for target.
+gen_ecc_key: CMakeFiles/gen_ecc_key.dir/rule
+
+.PHONY : gen_ecc_key
+
+# clean rule for target.
+CMakeFiles/gen_ecc_key.dir/clean:
+	$(MAKE) -f CMakeFiles/gen_ecc_key.dir/build.make CMakeFiles/gen_ecc_key.dir/clean
+.PHONY : CMakeFiles/gen_ecc_key.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_verify.dir
+
+# All Build rule for target.
+CMakeFiles/test_verify.dir/all: CMakeFiles/dtls.dir/all
+	$(MAKE) -f CMakeFiles/test_verify.dir/build.make CMakeFiles/test_verify.dir/depend
+	$(MAKE) -f CMakeFiles/test_verify.dir/build.make CMakeFiles/test_verify.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ndp/Documents/dtls/build/CMakeFiles --progress-num=12,13 "Built target test_verify"
+.PHONY : CMakeFiles/test_verify.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_verify.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ndp/Documents/dtls/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_verify.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ndp/Documents/dtls/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_verify.dir/rule
+
+# Convenience name for target.
+test_verify: CMakeFiles/test_verify.dir/rule
+
+.PHONY : test_verify
+
+# clean rule for target.
+CMakeFiles/test_verify.dir/clean:
+	$(MAKE) -f CMakeFiles/test_verify.dir/build.make CMakeFiles/test_verify.dir/clean
+.PHONY : CMakeFiles/test_verify.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/gen_rsa_key.dir
+
+# All Build rule for target.
+CMakeFiles/gen_rsa_key.dir/all:
+	$(MAKE) -f CMakeFiles/gen_rsa_key.dir/build.make CMakeFiles/gen_rsa_key.dir/depend
+	$(MAKE) -f CMakeFiles/gen_rsa_key.dir/build.make CMakeFiles/gen_rsa_key.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ndp/Documents/dtls/build/CMakeFiles --progress-num=6,7 "Built target gen_rsa_key"
+.PHONY : CMakeFiles/gen_rsa_key.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/gen_rsa_key.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ndp/Documents/dtls/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/gen_rsa_key.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ndp/Documents/dtls/build/CMakeFiles 0
+.PHONY : CMakeFiles/gen_rsa_key.dir/rule
+
+# Convenience name for target.
+gen_rsa_key: CMakeFiles/gen_rsa_key.dir/rule
+
+.PHONY : gen_rsa_key
+
+# clean rule for target.
+CMakeFiles/gen_rsa_key.dir/clean:
+	$(MAKE) -f CMakeFiles/gen_rsa_key.dir/build.make CMakeFiles/gen_rsa_key.dir/clean
+.PHONY : CMakeFiles/gen_rsa_key.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/dtls.dir
@@ -132,7 +219,7 @@ CMakeFiles/server.dir/clean:
 CMakeFiles/dtls.dir/all:
 	$(MAKE) -f CMakeFiles/dtls.dir/build.make CMakeFiles/dtls.dir/depend
 	$(MAKE) -f CMakeFiles/dtls.dir/build.make CMakeFiles/dtls.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ndp/Documents/dtls/build/CMakeFiles --progress-num=3,4,5 "Built target dtls"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ndp/Documents/dtls/build/CMakeFiles --progress-num=1,2,3 "Built target dtls"
 .PHONY : CMakeFiles/dtls.dir/all
 
 # Build rule for subdir invocation for target.

@@ -336,6 +336,144 @@ int dtls_probe(uint8_t* buf) {
     return 0;
 
   printf("DTLS content type: %d", buf[0]);
-  // only handle application data
   return (buf[0] == 0x17);
 }
+
+int gen_key_pair(mbedtls_pk_context *pkey, const char *key_type, int key_size) 
+{
+    int ret = 0;
+    const char *pers = "mbedtls_pk_genkey"; //
+
+    mbedtls_entropy_context entropy;
+    mbedtls_ctr_drbg_context ctr_drbg;
+
+    mbedtls_entropy_init(&entropy);
+    mbedtls_ctr_drbg_init(&ctr_drbg);
+
+    if ((ret = mbedtls_ctr_drbg_seed(&ctr_drbg, mbedtls_entropy_func, &entropy, (const unsigned char *)pers, strlen(pers))) != 0) {
+        printf("Failed to initialize CTR_DRBG\n");
+        goto cleanup;
+    }
+
+    if (strcmp(key_type, "rsa") == 0) {
+        if ((ret = mbedtls_pk_setup(pkey, mbedtls_pk_info_from_type(MBEDTLS_PK_RSA))) != 0) {
+            printf("Failed to setup PK context\n");
+            goto cleanup;
+        }
+
+        if ((ret = mbedtls_rsa_gen_key(mbedtls_pk_rsa(*pkey), mbedtls_ctr_drbg_random, &ctr_drbg, key_size, 65537)) != 0) {
+            printf("Failed to generate RSA key\n");
+            goto cleanup;
+        }
+
+    } else if (strcmp(key_type, "ecc") == 0) {
+        if ((ret = mbedtls_pk_setup(pkey, mbedtls_pk_info_from_type(MBEDTLS_PK_ECKEY))) != 0) {
+            printf("Failed to setup PK context\n");
+            goto cleanup;
+        }
+
+        char curve_name[10];
+        snprintf(curve_name, sizeof(curve_name), "secp%dr1", key_size);
+
+        const mbedtls_ecp_curve_info *curve_info = mbedtls_ecp_curve_info_from_name(curve_name);
+        if (curve_info == NULL) {
+            printf("Invalid curve name: %s\n", curve_name);
+            ret = -1;
+            goto cleanup;
+        }
+
+        if ((ret = mbedtls_ecp_gen_key(curve_info->grp_id, mbedtls_pk_ec(*pkey),
+                                       mbedtls_ctr_drbg_random, &ctr_drbg)) != 0) {
+            printf("Failed to generate ECC key\n");
+            goto cleanup;
+        }
+
+    } else {
+        printf("Invalid key type specified: %s\n", key_type);
+        ret = -1;
+        goto cleanup;
+    }
+
+cleanup:
+    mbedtls_ctr_drbg_free(&ctr_drbg);
+    mbedtls_entropy_free(&entropy);
+
+    return ret;
+}
+
+
+int write_private_key(mbedtls_pk_context *pkey, const char *format, const char *file_name)
+{
+    int ret;
+    FILE *f = fopen(file_name, "wb");
+    if (!f) {
+        perror("Failed to open output file");
+        ret = 1;
+        goto cleanup;
+    }
+
+    if (strcmp(format, "pem") == 0) {
+        unsigned char pem_buffer[4096]; 
+        if ((ret = mbedtls_pk_write_key_pem(pkey, pem_buffer, sizeof(pem_buffer))) != 0) {
+            printf("Failed to write private key in PEM format\n");
+            fclose(f);
+            goto cleanup;
+        }
+
+        fwrite(pem_buffer, 1, strlen((char *)pem_buffer), f);
+    } else { 
+        unsigned char buf[4096];
+        if ((ret = mbedtls_pk_write_key_der(pkey, buf, sizeof(buf))) < 0) {
+            printf("Failed to write private key in DER format\n");
+            fclose(f);
+            goto cleanup;
+        }
+
+        fwrite(buf + sizeof(buf) - ret, 1, ret, f);
+    }
+
+    fclose(f);
+    printf("Key written to %s\n", file_name);
+    ret = 0;
+
+cleanup:
+    return ret;
+}
+
+int write_public_key(mbedtls_pk_context *pkey, const char *format, const char *file_name)
+{
+    int ret;
+    FILE *f = fopen(file_name, "wb");
+    if (!f) {
+        perror("Failed to open output file");
+        ret = 1;
+        goto cleanup;
+    }
+
+    if (strcmp(format, "pem") == 0) {
+        unsigned char pem_buffer[4096]; 
+        if ((ret = mbedtls_pk_write_pubkey_pem(pkey, pem_buffer, sizeof(pem_buffer))) != 0) {
+            printf("Failed to write key in PEM format\n");
+            fclose(f);
+            goto cleanup;
+        }
+
+        fwrite(pem_buffer, 1, strlen((char *)pem_buffer), f);
+    } else { 
+        unsigned char buf[4096];
+        if ((ret = mbedtls_pk_write_pubkey_der(pkey, buf, sizeof(buf))) < 0) {
+            printf("Failed to write key in DER format");
+            fclose(f);
+            goto cleanup;
+        }
+        fwrite(buf + sizeof(buf) - ret, 1, ret, f);
+    }
+
+    fclose(f);
+    printf("Key written to %s\n", file_name);
+    ret = 0;
+
+cleanup:
+    return ret;
+}
+

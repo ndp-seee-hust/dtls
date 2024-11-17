@@ -4,6 +4,7 @@
         "complex": "cpp",
         "random": "cpp",
         "*.tcc": "cpp",
-        "string.h": "c"
+        "string.h": "c",
+        "dtls.h": "c"
     }
 }

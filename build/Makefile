@@ -111,30 +111,69 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named client
+# Target rules for targets named test_sign
 
 # Build rule for target.
-client: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 client
-.PHONY : client
+test_sign: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_sign
+.PHONY : test_sign
 
 # fast build rule for target.
-client/fast:
-	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/build
-.PHONY : client/fast
+test_sign/fast:
+	$(MAKE) -f CMakeFiles/test_sign.dir/build.make CMakeFiles/test_sign.dir/build
+.PHONY : test_sign/fast
 
 #=============================================================================
-# Target rules for targets named server
+# Target rules for targets named test_gen_key
 
 # Build rule for target.
-server: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 server
-.PHONY : server
+test_gen_key: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_gen_key
+.PHONY : test_gen_key
 
 # fast build rule for target.
-server/fast:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/build
-.PHONY : server/fast
+test_gen_key/fast:
+	$(MAKE) -f CMakeFiles/test_gen_key.dir/build.make CMakeFiles/test_gen_key.dir/build
+.PHONY : test_gen_key/fast
+
+#=============================================================================
+# Target rules for targets named gen_ecc_key
+
+# Build rule for target.
+gen_ecc_key: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gen_ecc_key
+.PHONY : gen_ecc_key
+
+# fast build rule for target.
+gen_ecc_key/fast:
+	$(MAKE) -f CMakeFiles/gen_ecc_key.dir/build.make CMakeFiles/gen_ecc_key.dir/build
+.PHONY : gen_ecc_key/fast
+
+#=============================================================================
+# Target rules for targets named test_verify
+
+# Build rule for target.
+test_verify: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_verify
+.PHONY : test_verify
+
+# fast build rule for target.
+test_verify/fast:
+	$(MAKE) -f CMakeFiles/test_verify.dir/build.make CMakeFiles/test_verify.dir/build
+.PHONY : test_verify/fast
+
+#=============================================================================
+# Target rules for targets named gen_rsa_key
+
+# Build rule for target.
+gen_rsa_key: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gen_rsa_key
+.PHONY : gen_rsa_key
+
+# fast build rule for target.
+gen_rsa_key/fast:
+	$(MAKE) -f CMakeFiles/gen_rsa_key.dir/build.make CMakeFiles/gen_rsa_key.dir/build
+.PHONY : gen_rsa_key/fast
 
 #=============================================================================
 # Target rules for targets named dtls
@@ -203,59 +242,140 @@ src/socket.c.s:
 	$(MAKE) -f CMakeFiles/dtls.dir/build.make CMakeFiles/dtls.dir/src/socket.c.s
 .PHONY : src/socket.c.s
 
-test/client_test.o: test/client_test.c.o
+test/gen_ecc_key.o: test/gen_ecc_key.c.o
 
-.PHONY : test/client_test.o
-
-# target to build an object file
-test/client_test.c.o:
-	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/test/client_test.c.o
-.PHONY : test/client_test.c.o
-
-test/client_test.i: test/client_test.c.i
-
-.PHONY : test/client_test.i
-
-# target to preprocess a source file
-test/client_test.c.i:
-	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/test/client_test.c.i
-.PHONY : test/client_test.c.i
-
-test/client_test.s: test/client_test.c.s
-
-.PHONY : test/client_test.s
-
-# target to generate assembly for a file
-test/client_test.c.s:
-	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/test/client_test.c.s
-.PHONY : test/client_test.c.s
-
-test/server_test.o: test/server_test.c.o
-
-.PHONY : test/server_test.o
+.PHONY : test/gen_ecc_key.o
 
 # target to build an object file
-test/server_test.c.o:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/test/server_test.c.o
-.PHONY : test/server_test.c.o
+test/gen_ecc_key.c.o:
+	$(MAKE) -f CMakeFiles/gen_ecc_key.dir/build.make CMakeFiles/gen_ecc_key.dir/test/gen_ecc_key.c.o
+.PHONY : test/gen_ecc_key.c.o
 
-test/server_test.i: test/server_test.c.i
+test/gen_ecc_key.i: test/gen_ecc_key.c.i
 
-.PHONY : test/server_test.i
+.PHONY : test/gen_ecc_key.i
 
 # target to preprocess a source file
-test/server_test.c.i:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/test/server_test.c.i
-.PHONY : test/server_test.c.i
+test/gen_ecc_key.c.i:
+	$(MAKE) -f CMakeFiles/gen_ecc_key.dir/build.make CMakeFiles/gen_ecc_key.dir/test/gen_ecc_key.c.i
+.PHONY : test/gen_ecc_key.c.i
 
-test/server_test.s: test/server_test.c.s
+test/gen_ecc_key.s: test/gen_ecc_key.c.s
 
-.PHONY : test/server_test.s
+.PHONY : test/gen_ecc_key.s
 
 # target to generate assembly for a file
-test/server_test.c.s:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/test/server_test.c.s
-.PHONY : test/server_test.c.s
+test/gen_ecc_key.c.s:
+	$(MAKE) -f CMakeFiles/gen_ecc_key.dir/build.make CMakeFiles/gen_ecc_key.dir/test/gen_ecc_key.c.s
+.PHONY : test/gen_ecc_key.c.s
+
+test/gen_rsa_key.o: test/gen_rsa_key.c.o
+
+.PHONY : test/gen_rsa_key.o
+
+# target to build an object file
+test/gen_rsa_key.c.o:
+	$(MAKE) -f CMakeFiles/gen_rsa_key.dir/build.make CMakeFiles/gen_rsa_key.dir/test/gen_rsa_key.c.o
+.PHONY : test/gen_rsa_key.c.o
+
+test/gen_rsa_key.i: test/gen_rsa_key.c.i
+
+.PHONY : test/gen_rsa_key.i
+
+# target to preprocess a source file
+test/gen_rsa_key.c.i:
+	$(MAKE) -f CMakeFiles/gen_rsa_key.dir/build.make CMakeFiles/gen_rsa_key.dir/test/gen_rsa_key.c.i
+.PHONY : test/gen_rsa_key.c.i
+
+test/gen_rsa_key.s: test/gen_rsa_key.c.s
+
+.PHONY : test/gen_rsa_key.s
+
+# target to generate assembly for a file
+test/gen_rsa_key.c.s:
+	$(MAKE) -f CMakeFiles/gen_rsa_key.dir/build.make CMakeFiles/gen_rsa_key.dir/test/gen_rsa_key.c.s
+.PHONY : test/gen_rsa_key.c.s
+
+test/test_gen_key.o: test/test_gen_key.c.o
+
+.PHONY : test/test_gen_key.o
+
+# target to build an object file
+test/test_gen_key.c.o:
+	$(MAKE) -f CMakeFiles/test_gen_key.dir/build.make CMakeFiles/test_gen_key.dir/test/test_gen_key.c.o
+.PHONY : test/test_gen_key.c.o
+
+test/test_gen_key.i: test/test_gen_key.c.i
+
+.PHONY : test/test_gen_key.i
+
+# target to preprocess a source file
+test/test_gen_key.c.i:
+	$(MAKE) -f CMakeFiles/test_gen_key.dir/build.make CMakeFiles/test_gen_key.dir/test/test_gen_key.c.i
+.PHONY : test/test_gen_key.c.i
+
+test/test_gen_key.s: test/test_gen_key.c.s
+
+.PHONY : test/test_gen_key.s
+
+# target to generate assembly for a file
+test/test_gen_key.c.s:
+	$(MAKE) -f CMakeFiles/test_gen_key.dir/build.make CMakeFiles/test_gen_key.dir/test/test_gen_key.c.s
+.PHONY : test/test_gen_key.c.s
+
+test/test_sign.o: test/test_sign.c.o
+
+.PHONY : test/test_sign.o
+
+# target to build an object file
+test/test_sign.c.o:
+	$(MAKE) -f CMakeFiles/test_sign.dir/build.make CMakeFiles/test_sign.dir/test/test_sign.c.o
+.PHONY : test/test_sign.c.o
+
+test/test_sign.i: test/test_sign.c.i
+
+.PHONY : test/test_sign.i
+
+# target to preprocess a source file
+test/test_sign.c.i:
+	$(MAKE) -f CMakeFiles/test_sign.dir/build.make CMakeFiles/test_sign.dir/test/test_sign.c.i
+.PHONY : test/test_sign.c.i
+
+test/test_sign.s: test/test_sign.c.s
+
+.PHONY : test/test_sign.s
+
+# target to generate assembly for a file
+test/test_sign.c.s:
+	$(MAKE) -f CMakeFiles/test_sign.dir/build.make CMakeFiles/test_sign.dir/test/test_sign.c.s
+.PHONY : test/test_sign.c.s
+
+test/test_verify.o: test/test_verify.c.o
+
+.PHONY : test/test_verify.o
+
+# target to build an object file
+test/test_verify.c.o:
+	$(MAKE) -f CMakeFiles/test_verify.dir/build.make CMakeFiles/test_verify.dir/test/test_verify.c.o
+.PHONY : test/test_verify.c.o
+
+test/test_verify.i: test/test_verify.c.i
+
+.PHONY : test/test_verify.i
+
+# target to preprocess a source file
+test/test_verify.c.i:
+	$(MAKE) -f CMakeFiles/test_verify.dir/build.make CMakeFiles/test_verify.dir/test/test_verify.c.i
+.PHONY : test/test_verify.c.i
+
+test/test_verify.s: test/test_verify.c.s
+
+.PHONY : test/test_verify.s
+
+# target to generate assembly for a file
+test/test_verify.c.s:
+	$(MAKE) -f CMakeFiles/test_verify.dir/build.make CMakeFiles/test_verify.dir/test/test_verify.c.s
+.PHONY : test/test_verify.c.s
 
 # Help Target
 help:
@@ -264,9 +384,12 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... client"
-	@echo "... server"
+	@echo "... test_sign"
+	@echo "... test_gen_key"
+	@echo "... gen_ecc_key"
 	@echo "... edit_cache"
+	@echo "... test_verify"
+	@echo "... gen_rsa_key"
 	@echo "... dtls"
 	@echo "... src/dtls.o"
 	@echo "... src/dtls.i"
@@ -274,12 +397,21 @@ help:
 	@echo "... src/socket.o"
 	@echo "... src/socket.i"
 	@echo "... src/socket.s"
-	@echo "... test/client_test.o"
-	@echo "... test/client_test.i"
-	@echo "... test/client_test.s"
-	@echo "... test/server_test.o"
-	@echo "... test/server_test.i"
-	@echo "... test/server_test.s"
+	@echo "... test/gen_ecc_key.o"
+	@echo "... test/gen_ecc_key.i"
+	@echo "... test/gen_ecc_key.s"
+	@echo "... test/gen_rsa_key.o"
+	@echo "... test/gen_rsa_key.i"
+	@echo "... test/gen_rsa_key.s"
+	@echo "... test/test_gen_key.o"
+	@echo "... test/test_gen_key.i"
+	@echo "... test/test_gen_key.s"
+	@echo "... test/test_sign.o"
+	@echo "... test/test_sign.i"
+	@echo "... test/test_sign.s"
+	@echo "... test/test_verify.o"
+	@echo "... test/test_verify.i"
+	@echo "... test/test_verify.s"
 .PHONY : help
 
 

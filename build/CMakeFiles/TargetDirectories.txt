@@ -1,5 +1,8 @@
 /home/ndp/Documents/dtls/build/CMakeFiles/rebuild_cache.dir
-/home/ndp/Documents/dtls/build/CMakeFiles/client.dir
-/home/ndp/Documents/dtls/build/CMakeFiles/server.dir
+/home/ndp/Documents/dtls/build/CMakeFiles/test_sign.dir
+/home/ndp/Documents/dtls/build/CMakeFiles/test_gen_key.dir
+/home/ndp/Documents/dtls/build/CMakeFiles/gen_ecc_key.dir
 /home/ndp/Documents/dtls/build/CMakeFiles/edit_cache.dir
+/home/ndp/Documents/dtls/build/CMakeFiles/test_verify.dir
+/home/ndp/Documents/dtls/build/CMakeFiles/gen_rsa_key.dir
 /home/ndp/Documents/dtls/build/CMakeFiles/dtls.dir

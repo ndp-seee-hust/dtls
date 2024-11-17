@@ -1,0 +1,1 @@
+/usr/bin/cc    CMakeFiles/gen_key.dir/test/gen_key.c.o  -o gen_key  libdtls.a ../libmbedtls/libmbedx509.a ../libmbedtls/libmbedtls.a ../libmbedtls/libmbedcrypto.a 
